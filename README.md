@@ -2,6 +2,8 @@
 
 # About Me 
 
+サイトURL: https://wangchangdog.github.io/about-me/
+
 (例)
 このサイトは私の自己紹介のために制作しました。
 私は宇宙と地球が好きなので、それをTOPのキービジュアルにしました。
