@@ -46,96 +46,109 @@ table {
 /* styles.css */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f0f0f0;
 }
 
-header, footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
+.hero {
+    height: 50vh;
+    width: 100%;
+    overflow: hidden;
 }
 
-nav ul {
+.hero-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.header {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(55, 65, 81, 0.4); /* bg-gray-700 with opacity-40 */
+}
+
+.nav-list {
     display: flex;
     justify-content: center;
-    gap: 1em;
+    gap: 1.25rem; /* gap-5 */
+    color: white;
 }
 
-nav a {
+.nav-item a {
     color: white;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-nav a:hover {
-    color: #ff6347;
+.nav-item a:hover {
+    color: #ff6347; /* hover:text-orange-500 */
 }
 
-main {
-    padding: 2em;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: white;
+.main-section {
+    text-align: center;
+    margin-top: 2rem;
     animation: fadeIn 1s ease-in-out;
 }
 
-h1, h2 {
+.main-section h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
     color: #333;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+.main-section p, .main-section figure {
+    margin-bottom: 1rem;
+    color: #555;
 }
 
-.profile-pic {
-    border-radius: 50%;
-    transition: transform 0.3s;
-}
-
-.profile-pic:hover {
-    transform: scale(1.1);
-}
-
-.projects, .favorites {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-}
-
-.project, .favorite {
-    flex: 1 1 calc(50% - 1em);
-    background-color: #f9f9f9;
-    padding: 1em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project:hover, .favorite:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* アニメーション */
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* レスポンシブ対応 */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-    }
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
 
-    .project, .favorite {
-        flex: 1 1 100%;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+}
+
+form button {
+    padding: 0.5rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+@media (max-width: 600px) {
+    .nav-list {
+        flex-direction: column;
     }
 }
